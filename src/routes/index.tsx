@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, Compass, Network, Menu, X, Ear, Lightbulb, Hammer, HeartHandshake, Headset, Sparkles } from "lucide-react";
+import { ArrowRight, Compass, Network, Menu, X, Ear, Lightbulb, Hammer, HeartHandshake, Headset, Sparkles, Linkedin, Youtube, Twitter, MapPin, Mail, Phone } from "lucide-react";
 import aboutImg from "@/assets/about.jpg";
 
 export const Route = createFileRoute("/")({
