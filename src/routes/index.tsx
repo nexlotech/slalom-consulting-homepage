@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, Compass, Network, Menu, X, Ear, Lightbulb, Hammer, HeartHandshake, Headset, Sparkles, Linkedin, Youtube, Twitter, MapPin, Mail, Phone } from "lucide-react";
+import { ArrowLeft, ArrowRight, Compass, Network, Menu, X, Ear, Lightbulb, Hammer, HeartHandshake, Headset, Sparkles, Linkedin, Youtube, Twitter } from "lucide-react";
 import aboutImg from "@/assets/about.jpg";
 import blog1 from "@/assets/blog-1.jpg";
 import blog2 from "@/assets/blog-2.jpg";
@@ -300,9 +300,9 @@ function Index() {
             <div>
               <h3 className="text-xs font-bold tracking-[0.2em] text-navy-foreground/50 uppercase">Get in touch</h3>
               <ul className="mt-5 space-y-4 text-sm text-navy-foreground/75">
-                <li className="flex gap-3"><MapPin className="mt-0.5 size-4 shrink-0 text-brand" /><span>Our office address is being confirmed and will appear here.</span></li>
-                <li className="flex gap-3"><Mail className="mt-0.5 size-4 shrink-0 text-brand" /><a href="#" className="hover:text-brand transition">hello@erpfunnel.com</a></li>
-                <li className="flex gap-3"><Phone className="mt-0.5 size-4 shrink-0 text-brand" /><a href="#" className="hover:text-brand transition">+91 &nbsp;—&nbsp; to be confirmed</a></li>
+                <li><span>Our office address is being confirmed and will appear here.</span></li>
+                <li><a href="#" className="hover:text-brand transition">hello@erpfunnel.com</a></li>
+                <li><a href="#" className="hover:text-brand transition">+91 &nbsp;—&nbsp; to be confirmed</a></li>
               </ul>
               <a href="#" className="mt-6 inline-flex items-center gap-2 rounded-full border-2 border-brand px-5 py-2 text-sm font-bold text-navy-foreground hover:bg-brand transition">Start a conversation <ArrowRight className="size-4" /></a>
             </div>
