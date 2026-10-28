@@ -40,7 +40,7 @@ const pillars = [
 
 function AboutSection() {
   const [active, setActive] = useState(1);
-  const ActiveIcon = pillars[active].I;
+  const ActiveIcon = (pillars[active] ?? pillars[0]!).I;
   return (
     <section id="about" className="bg-navy py-24">
       <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-14 items-center">
