@@ -55,28 +55,31 @@ function Index() {
         )}
       </header>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <p className="text-xs font-bold tracking-[0.2em] text-brand-foreground">BUSINESS FIRST. TECHNOLOGY SECOND. OUTCOMES ALWAYS.</p>
-          <h1 className="mt-6 text-4xl md:text-6xl font-light leading-[1.08] tracking-tight">
-            From Implementing Technology, Business Solutions & Processes to <span className="font-serif italic text-brand-foreground">Designing Better Businesses.</span>
-          </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-xl">Independent IT advisory and digital transformation solutions that help businesses make better technology decisions, improve operations and achieve measurable outcomes.</p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <span className="text-sm font-bold">Explore Services:</span>
-            <a href="#" className="rounded-full border border-foreground/70 px-5 py-2 text-sm font-bold hover:bg-foreground hover:text-background transition">odoo</a>
-            <a href="#" className="rounded-full border border-foreground/70 px-5 py-2 text-sm font-semibold flex items-center gap-2 hover:bg-foreground hover:text-background transition"><MsMark />Microsoft</a>
-            <a href="#" className="rounded-full border border-foreground/70 px-5 py-2 text-sm font-semibold flex items-center gap-2 hover:bg-foreground hover:text-background transition"><Sparkles className="size-4 text-brand" />AI Platform</a>
-          </div>
+      <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-navy">
+        <div className="absolute inset-0 overflow-hidden">
+          <iframe
+            src="https://www.youtube.com/embed/b-0k8ngK4ms?autoplay=1&mute=1&loop=1&playlist=b-0k8ngK4ms&controls=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1&fs=0"
+            title="Background video"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            frameBorder="0"
+            className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            style={{ width: "max(100vw, 177.78vh)", height: "max(56.25vw, 100vh)" }}
+          />
         </div>
-        <div className="relative">
-          <img src={hero} alt="Business leader overlooking a city skyline" width={1280} height={1024} className="rounded-3xl object-cover w-full aspect-[5/4]" />
-          <div className="absolute left-4 top-4 flex flex-col gap-2">
-            {[["Technology", Cpu], ["Solutions", Layers], ["Processes", Workflow]].map(([l, I]: any) => (
-              <span key={l} className="flex items-center gap-2 rounded-full bg-background/90 backdrop-blur px-4 py-2 text-sm font-semibold shadow"><I className="size-4 text-brand" />{l}</span>
-            ))}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/70 to-navy/30" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-navy to-transparent" />
+        <div className="relative mx-auto w-full max-w-7xl px-6 py-24">
+          <p className="text-xs font-bold tracking-[0.2em] text-brand-foreground">BUSINESS FIRST. TECHNOLOGY SECOND. OUTCOMES ALWAYS.</p>
+          <h1 className="mt-6 max-w-3xl text-4xl md:text-6xl font-light leading-[1.08] tracking-tight text-navy-foreground">
+            From Implementing Technology, Business Solutions &amp; Processes to <span className="font-serif italic text-brand-foreground">Designing Better Businesses.</span>
+          </h1>
+          <p className="mt-6 max-w-xl text-lg text-navy-foreground/75">Independent IT advisory and digital transformation solutions that help businesses make better technology decisions, improve operations and achieve measurable outcomes.</p>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <span className="text-sm font-bold text-navy-foreground">Explore Services:</span>
+            <a href="#" className="rounded-full border border-navy-foreground/60 bg-navy/40 px-5 py-2 text-sm font-bold text-navy-foreground backdrop-blur hover:bg-navy-foreground hover:text-navy transition">odoo</a>
+            <a href="#" className="rounded-full border border-navy-foreground/60 bg-navy/40 px-5 py-2 text-sm font-semibold text-navy-foreground backdrop-blur flex items-center gap-2 hover:bg-navy-foreground hover:text-navy transition"><MsMark />Microsoft</a>
+            <a href="#" className="rounded-full border border-navy-foreground/60 bg-navy/40 px-5 py-2 text-sm font-semibold text-navy-foreground backdrop-blur flex items-center gap-2 hover:bg-navy-foreground hover:text-navy transition"><Sparkles className="size-4 text-brand" />AI Platform</a>
           </div>
-          <p className="absolute bottom-5 right-5 rounded-xl bg-navy/85 text-navy-foreground px-5 py-3 font-bold">Better Systems. Stronger Businesses.</p>
         </div>
       </section>
 
