@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, Compass, Network, Menu, X, Ear, Lightbulb, Hammer, HeartHandshake, Headset, Sparkles } from "lucide-react";
+import { ArrowRight, Compass, Network, Menu, X, Ear, Lightbulb, Hammer, HeartHandshake, Headset, Sparkles, Linkedin, Youtube, Twitter, MapPin, Mail, Phone } from "lucide-react";
 import aboutImg from "@/assets/about.jpg";
 
 export const Route = createFileRoute("/")({
@@ -163,7 +163,7 @@ function Index() {
         </div>
       </section>
 
-      <footer id="contact" className="bg-navy-gradient text-navy-foreground">
+      <section id="contact" className="bg-navy-gradient text-navy-foreground">
         <div className="mx-auto max-w-7xl px-6 py-16 flex flex-col md:flex-row md:items-center gap-8">
           <span className="grid place-items-center size-16 rounded-full bg-brand shrink-0"><Headset className="size-8" /></span>
           <div className="flex-1">
@@ -172,7 +172,63 @@ function Index() {
           </div>
           <a href="#" className="inline-flex items-center gap-2 rounded-full bg-brand text-primary-foreground px-7 py-3 font-bold hover:brightness-110 focus-visible:ring-4 ring-brand/40 transition">Meet your virtual guide <ArrowRight className="size-4" /></a>
         </div>
-        <p className="border-t border-navy-foreground/10 py-6 text-center text-xs opacity-60">© 2026 ERPFunnel™. All rights reserved.</p>
+      </section>
+
+      <footer className="border-t border-navy-foreground/10 bg-navy text-navy-foreground">
+        <div className="mx-auto max-w-7xl px-6 pt-16 pb-10">
+          <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+            <div>
+              <a href="#" className="text-3xl font-extrabold tracking-tight">ERP<span className="text-brand">Funnel</span>™</a>
+              <p className="mt-4 max-w-xs text-sm leading-relaxed text-navy-foreground/70">Independent IT advisory and digital transformation. Business first. Technology second. Outcomes always.</p>
+              <div className="mt-6 flex gap-3">
+                {[
+                  { label: "LinkedIn", I: Linkedin },
+                  { label: "YouTube", I: Youtube },
+                  { label: "X", I: Twitter },
+                ].map(({ label, I }) => (
+                  <a key={label} href="#" aria-label={label} className="grid place-items-center size-10 rounded-full border border-navy-foreground/25 text-navy-foreground/80 hover:border-brand hover:text-brand transition">
+                    <I className="size-4" />
+                  </a>
+                ))}
+              </div>
+            </div>
+            <nav aria-label="Services">
+              <h3 className="text-xs font-bold tracking-[0.2em] text-navy-foreground/50 uppercase">Services</h3>
+              <ul className="mt-5 space-y-3 text-sm">
+                {["Advisory", "Digital Transformation", "Odoo", "Microsoft", "AI Platform"].map((l) => (
+                  <li key={l}><a href="#" className="text-navy-foreground/75 hover:text-brand transition">{l}</a></li>
+                ))}
+              </ul>
+            </nav>
+            <nav aria-label="Company">
+              <h3 className="text-xs font-bold tracking-[0.2em] text-navy-foreground/50 uppercase">Company</h3>
+              <ul className="mt-5 space-y-3 text-sm">
+                {["About", "Industries", "Insights", "Careers", "Contact"].map((l) => (
+                  <li key={l}><a href="#" className="text-navy-foreground/75 hover:text-brand transition">{l}</a></li>
+                ))}
+              </ul>
+            </nav>
+            <div>
+              <h3 className="text-xs font-bold tracking-[0.2em] text-navy-foreground/50 uppercase">Get in touch</h3>
+              <ul className="mt-5 space-y-4 text-sm text-navy-foreground/75">
+                <li className="flex gap-3"><MapPin className="mt-0.5 size-4 shrink-0 text-brand" /><span>Our office address is being confirmed and will appear here.</span></li>
+                <li className="flex gap-3"><Mail className="mt-0.5 size-4 shrink-0 text-brand" /><a href="#" className="hover:text-brand transition">hello@erpfunnel.com</a></li>
+                <li className="flex gap-3"><Phone className="mt-0.5 size-4 shrink-0 text-brand" /><a href="#" className="hover:text-brand transition">+91 &nbsp;—&nbsp; to be confirmed</a></li>
+              </ul>
+              <a href="#" className="mt-6 inline-flex items-center gap-2 rounded-full border-2 border-brand px-5 py-2 text-sm font-bold text-navy-foreground hover:bg-brand transition">Start a conversation <ArrowRight className="size-4" /></a>
+            </div>
+          </div>
+        </div>
+        <div className="border-t border-navy-foreground/10">
+          <div className="mx-auto max-w-7xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-navy-foreground/60">
+            <p>© 2026 ERPFunnel™. All rights reserved.</p>
+            <div className="flex gap-6">
+              {["Privacy Policy", "Terms of Use", "Cookie Preferences"].map((l) => (
+                <a key={l} href="#" className="hover:text-brand transition">{l}</a>
+              ))}
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
   );
