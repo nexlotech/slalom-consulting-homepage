@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowRight, Compass, Network, Menu, X, Ear, Lightbulb, Hammer, HeartHandshake, Headset, Sparkles } from "lucide-react";
+import aboutImg from "@/assets/about.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -28,6 +29,42 @@ function MsMark() {
       <span className="bg-[oklch(0.63_0.22_30)]" /><span className="bg-[oklch(0.72_0.19_140)]" />
       <span className="bg-[oklch(0.65_0.18_240)]" /><span className="bg-[oklch(0.82_0.17_85)]" />
     </span>
+  );
+}
+
+const pillars = [
+  { t: "Advisory", I: Compass },
+  { t: "Digital Transformation", I: Network },
+  { t: "AI Platform", I: Sparkles },
+];
+
+function AboutSection() {
+  const [active, setActive] = useState(1);
+  const ActiveIcon = pillars[active].I;
+  return (
+    <section id="about" className="bg-navy py-24">
+      <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-14 items-center">
+        <div>
+          <div className="flex items-center gap-8">
+            <span className="grid place-items-center size-24 rounded-2xl border-2 border-brand text-brand"><ActiveIcon className="size-12" /></span>
+            <ul className="space-y-2">
+              {pillars.map((p, i) => (
+                <li key={p.t}>
+                  <button onClick={() => setActive(i)} className={`text-xl font-semibold transition ${i === active ? "text-navy-foreground" : "text-navy-foreground/40 hover:text-navy-foreground/70"}`}>{p.t}</button>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <h2 className="mt-14 text-4xl md:text-5xl font-light tracking-tight text-navy-foreground">About <span className="font-serif italic">ERPFunnel™</span></h2>
+          <p className="mt-6 max-w-xl text-lg text-navy-foreground/80">Independent IT advisory and digital transformation solutions that help businesses make better technology decisions, improve operations and achieve measurable outcomes. Business first. Technology second. Outcomes always.</p>
+          <a href="#contact" className="mt-10 inline-flex rounded-full border-2 border-brand px-6 py-3 text-sm font-bold text-navy-foreground hover:bg-brand transition">Learn more about us</a>
+        </div>
+        <figure>
+          <img src={aboutImg} alt="Consultants discussing a project on site" loading="lazy" width={1344} height={1024} className="w-full rounded-3xl object-cover aspect-[4/3]" />
+          <figcaption className="mt-4 text-sm text-navy-foreground/70">Our team works alongside yours — understanding your people, processes and priorities before choosing technology.</figcaption>
+        </figure>
+      </div>
+    </section>
   );
 }
 
@@ -104,6 +141,8 @@ function Index() {
           </a>
         ))}
       </section>
+
+      <AboutSection />
 
       <section className="bg-wave py-20">
         <div className="mx-auto max-w-7xl px-6">
