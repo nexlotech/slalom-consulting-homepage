@@ -72,9 +72,18 @@ function AboutSection() {
 }
 
 const posts = [
-  { tag: "Customer story", t: "Moving from spreadsheets to a single Odoo ERP for real-time manufacturing visibility", meta: "Manufacturing", img: blog1 },
-  { tag: "Approach", t: "Why business-first advisory beats technology-first projects", meta: "ERPFunnel™ Insights", img: blog2 },
-  { tag: "AI Platform", t: "Turning operational data into AI-powered decisions", meta: "Data & AI", img: blog3 },
+  {
+    tag: "Customer story", t: "Moving from spreadsheets to a single Odoo ERP for real-time manufacturing visibility", meta: "Manufacturing", img: blog1,
+    h: "Discover how a guided DRIC™ journey helped a distributor cut order-processing time and unify finance, inventory and sales.", industry: "Distribution & retail", read: "4 minute read",
+  },
+  {
+    tag: "Approach", t: "Why business-first advisory beats technology-first projects", meta: "ERPFunnel™ Insights", img: blog2,
+    h: "See how our DRIC™ method keeps outcomes — not software — at the centre of every transformation decision.", industry: "Advisory", read: "5 minute read",
+  },
+  {
+    tag: "AI Platform", t: "Turning operational data into AI-powered decisions", meta: "Data & AI", img: blog3,
+    h: "How connected ERP data becomes the foundation for AI that plans, forecasts and acts alongside your teams.", industry: "Data & AI", read: "3 minute read",
+  },
 ];
 
 function BlogSection() {
@@ -91,23 +100,24 @@ function BlogSection() {
           </div>
         </div>
         <div ref={ref} className="mt-10 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 [scrollbar-width:none]">
-          <article className="snap-start shrink-0 w-[85%] sm:w-[340px] min-h-[520px] rounded-b-3xl bg-brand text-primary-foreground p-7 flex flex-col">
-            <p className="text-xs tracking-[0.2em] uppercase">Customer story</p>
-            <h3 className="mt-5 text-2xl leading-snug">Discover how a guided DRIC™ journey helped a distributor cut order-processing time and unify finance, inventory and sales.</h3>
-            <p className="mt-8 text-sm font-bold">Industry</p>
-            <p className="text-sm">Distribution &amp; retail</p>
-            <div className="mt-auto flex items-center justify-between">
-              <a href="#" className="inline-flex items-center gap-2 font-bold">Read story <ArrowRight className="size-5" /></a>
-              <span className="text-sm">4 minute read</span>
-            </div>
-          </article>
           {posts.map((p) => (
-            <a key={p.t} href="#" className="group snap-start shrink-0 w-[85%] sm:w-[340px] rounded-b-3xl overflow-hidden bg-foreground/5 border border-foreground/10 flex flex-col">
-              <img src={p.img} alt={p.t} loading="lazy" width={768} height={960} className="h-80 w-full object-cover group-hover:scale-105 transition duration-500" />
-              <div className="p-7 flex flex-col flex-1 text-navy-foreground">
+            <a key={p.t} href="#" className="group relative snap-start block shrink-0 w-[85%] sm:w-[340px] min-h-[520px] rounded-b-3xl overflow-hidden border border-foreground/10 flex flex-col">
+              <img src={p.img} alt={p.t} loading="lazy" width={768} height={960} className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent" />
+              <div className="relative mt-auto p-7 text-navy-foreground">
                 <p className="text-xs tracking-[0.2em] uppercase">{p.tag}</p>
                 <h3 className="mt-3 text-xl font-bold leading-snug">{p.t}</h3>
-                <p className="mt-auto pt-6 text-sm font-serif text-navy-foreground/80">{p.meta}</p>
+                <p className="mt-4 text-sm font-serif text-navy-foreground/80">{p.meta}</p>
+              </div>
+              <div className="absolute inset-0 flex flex-col bg-brand p-7 text-primary-foreground transition-transform duration-500 ease-out translate-y-full group-hover:translate-y-0">
+                <p className="text-xs tracking-[0.2em] uppercase">{p.tag}</p>
+                <h3 className="mt-5 text-2xl leading-snug">{p.h}</h3>
+                <p className="mt-8 text-sm font-bold">Industry</p>
+                <p className="text-sm">{p.industry}</p>
+                <div className="mt-auto flex items-center justify-between">
+                  <span className="inline-flex items-center gap-2 font-bold">Read story <ArrowRight className="size-5" /></span>
+                  <span className="text-sm">{p.read}</span>
+                </div>
               </div>
             </a>
           ))}
