@@ -5,6 +5,13 @@ import aboutImg from "@/assets/about.jpg";
 import blog1 from "@/assets/blog-1.jpg";
 import blog2 from "@/assets/blog-2.jpg";
 import blog3 from "@/assets/blog-3.jpg";
+import blog4 from "@/assets/blog-4.jpg";
+import blog5 from "@/assets/blog-5.jpg";
+import blog6 from "@/assets/blog-6.jpg";
+import serviceAdvisory from "@/assets/service-advisory.jpg";
+import serviceTransformation from "@/assets/service-transformation.jpg";
+import serviceAi from "@/assets/service-ai.jpg";
+import logoAsset from "@/assets/erpfunnel-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -84,6 +91,18 @@ const posts = [
     tag: "AI Platform", t: "Turning operational data into AI-powered decisions", meta: "Data & AI", img: blog3,
     h: "How connected ERP data becomes the foundation for AI that plans, forecasts and acts alongside your teams.", industry: "Data & AI", read: "3 minute read",
   },
+  {
+    tag: "Customer story", t: "Unifying warehouse operations with real-time inventory on Odoo", meta: "Manufacturing", img: blog4,
+    h: "How one distribution team replaced manual stock checks with live, accurate inventory across every aisle.", industry: "Distribution & retail", read: "4 minute read",
+  },
+  {
+    tag: "Advisory", t: "Running a technology roadmap workshop your leaders will actually use", meta: "IT Strategy", img: blog5,
+    h: "The practical format we use to align business and IT leaders on priorities, phases and investment.", industry: "Advisory", read: "6 minute read",
+  },
+  {
+    tag: "Analytics", t: "From month-end reports to always-on business dashboards", meta: "Data & Analytics", img: blog6,
+    h: "Why connected ERP data turns static reports into decisions your teams can act on the same day.", industry: "Data & AI", read: "5 minute read",
+  },
 ];
 
 function BlogSection() {
@@ -133,13 +152,13 @@ function Index() {
     <div className="min-h-screen bg-background font-sans">
       <header className="bg-navy text-navy-foreground sticky top-0 z-50">
         <div className="mx-auto max-w-7xl px-6 h-18 py-4 flex items-center justify-between gap-6">
-          <a href="#" className="text-2xl font-extrabold tracking-tight">ERP<span className="text-brand">Funnel</span>™</a>
+          <a href="#" className="shrink-0"><img src={logoAsset.url} alt="ERPFunnel™" className="h-10 w-auto" /></a>
           <nav className="hidden lg:flex gap-8 text-sm font-medium">
             {nav.map((n) => <a key={n} href={`#${n.toLowerCase().replace(/ /g, "-")}`} className="opacity-80 hover:opacity-100 hover:text-brand transition">{n}</a>)}
           </nav>
           <div className="flex items-center gap-3">
             <a href="#contact" className="hidden sm:inline-flex rounded-full border border-navy-foreground/60 px-5 py-2 text-sm font-semibold hover:bg-navy-foreground hover:text-navy transition">Contact Us</a>
-            <button aria-label="Toggle menu" onClick={() => setOpen(!open)} className="p-2">{open ? <X /> : <Menu />}</button>
+            <button aria-label="Toggle menu" onClick={() => setOpen(!open)} className="p-2 lg:hidden">{open ? <X /> : <Menu />}</button>
           </div>
         </div>
         {open && (
@@ -186,19 +205,28 @@ function Index() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20 grid md:grid-cols-2 gap-6">
-        {[
-          { id: "advisory", t: "Advisory", s: "Technology & Business", d: "IT strategy, vCIO, ERP assessment and technology roadmaps.", I: Compass },
-          { id: "digital-transformation", t: "Digital Transformation", s: "End-to-end change", d: "ERP, AI, Automation, Integration, Analytics, Branding and Media.", I: Network },
-        ].map(({ id, t, s, d, I }) => (
-          <a key={t} id={id} href="#" className="group rounded-3xl border border-foreground/15 bg-foreground/5 p-8 md:p-10 hover:border-brand hover:bg-foreground/10 transition">
-            <span className="grid place-items-center size-14 rounded-full bg-brand text-primary-foreground"><I /></span>
-            <p className="mt-6 text-sm font-semibold text-brand-foreground">{s}</p>
-            <h2 className="mt-1 text-3xl md:text-4xl font-light">{t}</h2>
-            <p className="mt-3 text-muted-foreground">{d}</p>
-            <ArrowRight className="mt-6 text-brand group-hover:translate-x-2 transition" />
-          </a>
-        ))}
+      <section className="bg-navy py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="max-w-3xl text-4xl md:text-5xl font-light tracking-tight text-navy-foreground">Advisory &amp; transformation that drive <span className="font-serif italic text-brand-foreground">real outcomes</span></h2>
+          <p className="mt-5 max-w-2xl text-lg text-navy-foreground/75">From IT strategy to end-to-end change, we help businesses make better technology decisions — measuring success in outcomes, not software.</p>
+          <div className="mt-12 grid md:grid-cols-3 gap-8">
+            {[
+              { id: "advisory", t: "Advisory", s: "Technology & Business", d: "IT strategy, vCIO, ERP assessment and technology roadmaps.", cta: "Explore Advisory", img: serviceAdvisory },
+              { id: "digital-transformation", t: "Digital Transformation", s: "End-to-end change", d: "ERP, AI, Automation, Integration, Analytics, Branding and Media.", cta: "Explore the services", img: serviceTransformation },
+              { id: "ai-platform", t: "AI Platform", s: "Intelligence built in", d: "Insights, automation and better decisions on top of your connected data.", cta: "Discover the platform", img: serviceAi },
+            ].map(({ id, t, s, d, cta, img }) => (
+              <a key={t} id={id} href="#" className="group flex flex-col">
+                <div className="overflow-hidden rounded-2xl border border-foreground/10">
+                  <img src={img} alt={t} loading="lazy" width={1280} height={720} className="aspect-video w-full object-cover transition duration-500 group-hover:scale-105" />
+                </div>
+                <p className="mt-6 text-sm font-semibold text-brand-foreground">{s}</p>
+                <h3 className="mt-1 text-2xl font-bold text-navy-foreground">{t}</h3>
+                <p className="mt-2 text-navy-foreground/75">{d}</p>
+                <span className="mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-navy-foreground/60 px-5 py-2 text-sm font-semibold text-navy-foreground transition group-hover:bg-navy-foreground group-hover:text-navy">{cta}<ArrowRight className="size-4 transition group-hover:translate-x-1" /></span>
+              </a>
+            ))}
+          </div>
+        </div>
       </section>
 
       <AboutSection />
@@ -239,7 +267,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6 pt-16 pb-10">
           <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
             <div>
-              <a href="#" className="text-3xl font-extrabold tracking-tight">ERP<span className="text-brand">Funnel</span>™</a>
+              <a href="#" className="inline-block"><img src={logoAsset.url} alt="ERPFunnel™" className="h-12 w-auto" /></a>
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-navy-foreground/70">Independent IT advisory and digital transformation. Business first. Technology second. Outcomes always.</p>
               <div className="mt-6 flex gap-3">
                 {[
