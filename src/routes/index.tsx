@@ -57,7 +57,7 @@ function Index() {
       <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-navy">
         <div className="absolute inset-0 overflow-hidden">
           <iframe
-            src="https://www.youtube.com/embed/b-0k8ngK4ms?autoplay=1&mute=1&loop=1&playlist=b-0k8ngK4ms&controls=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1&fs=0"
+            src="https://www.youtube.com/embed/BOG_CbEDhag?autoplay=1&mute=1&loop=1&playlist=BOG_CbEDhag&controls=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1&fs=0"
             title="Background video"
             allow="autoplay; encrypted-media; picture-in-picture"
             frameBorder="0"
