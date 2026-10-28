@@ -1,7 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { ArrowRight, Compass, Network, Menu, X, Ear, Lightbulb, Hammer, HeartHandshake, Headset, Sparkles, Linkedin, Youtube, Twitter, MapPin, Mail, Phone } from "lucide-react";
+import { useRef, useState } from "react";
+import { ArrowLeft, ArrowRight, Compass, Network, Menu, X, Ear, Lightbulb, Hammer, HeartHandshake, Headset, Sparkles, Linkedin, Youtube, Twitter, MapPin, Mail, Phone } from "lucide-react";
 import aboutImg from "@/assets/about.jpg";
+import blog1 from "@/assets/blog-1.jpg";
+import blog2 from "@/assets/blog-2.jpg";
+import blog3 from "@/assets/blog-3.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -63,6 +66,52 @@ function AboutSection() {
           <img src={aboutImg} alt="Consultants discussing a project on site" loading="lazy" width={1344} height={1024} className="w-full rounded-3xl object-cover aspect-[4/3]" />
           <figcaption className="mt-4 text-sm text-navy-foreground/70">Our team works alongside yours — understanding your people, processes and priorities before choosing technology.</figcaption>
         </figure>
+      </div>
+    </section>
+  );
+}
+
+const posts = [
+  { tag: "Customer story", t: "Moving from spreadsheets to a single Odoo ERP for real-time manufacturing visibility", meta: "Manufacturing", img: blog1 },
+  { tag: "Approach", t: "Why business-first advisory beats technology-first projects", meta: "ERPFunnel™ Insights", img: blog2 },
+  { tag: "AI Platform", t: "Turning operational data into AI-powered decisions", meta: "Data & AI", img: blog3 },
+];
+
+function BlogSection() {
+  const ref = useRef<HTMLDivElement>(null);
+  const scroll = (d: number) => ref.current?.scrollBy({ left: d * 360, behavior: "smooth" });
+  return (
+    <section id="insights" className="bg-navy py-24">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex items-end justify-between gap-6">
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight text-navy-foreground">Explore our stories <span className="font-serif italic">&amp; insights</span></h2>
+          <div className="flex gap-4 text-brand">
+            <button aria-label="Previous" onClick={() => scroll(-1)} className="hover:opacity-70"><ArrowLeft className="size-7" /></button>
+            <button aria-label="Next" onClick={() => scroll(1)} className="hover:opacity-70"><ArrowRight className="size-7" /></button>
+          </div>
+        </div>
+        <div ref={ref} className="mt-10 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 [scrollbar-width:none]">
+          <article className="snap-start shrink-0 w-[85%] sm:w-[340px] min-h-[520px] rounded-b-3xl bg-brand text-primary-foreground p-7 flex flex-col">
+            <p className="text-xs tracking-[0.2em] uppercase">Customer story</p>
+            <h3 className="mt-5 text-2xl leading-snug">Discover how a guided DRIC™ journey helped a distributor cut order-processing time and unify finance, inventory and sales.</h3>
+            <p className="mt-8 text-sm font-bold">Industry</p>
+            <p className="text-sm">Distribution &amp; retail</p>
+            <div className="mt-auto flex items-center justify-between">
+              <a href="#" className="inline-flex items-center gap-2 font-bold">Read story <ArrowRight className="size-5" /></a>
+              <span className="text-sm">4 minute read</span>
+            </div>
+          </article>
+          {posts.map((p) => (
+            <a key={p.t} href="#" className="group snap-start shrink-0 w-[85%] sm:w-[340px] rounded-b-3xl overflow-hidden bg-foreground/5 border border-foreground/10 flex flex-col">
+              <img src={p.img} alt={p.t} loading="lazy" width={768} height={960} className="h-80 w-full object-cover group-hover:scale-105 transition duration-500" />
+              <div className="p-7 flex flex-col flex-1 text-navy-foreground">
+                <p className="text-xs tracking-[0.2em] uppercase">{p.tag}</p>
+                <h3 className="mt-3 text-xl font-bold leading-snug">{p.t}</h3>
+                <p className="mt-auto pt-6 text-sm font-serif text-navy-foreground/80">{p.meta}</p>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -143,6 +192,8 @@ function Index() {
       </section>
 
       <AboutSection />
+
+      <BlogSection />
 
       <section className="bg-wave py-20">
         <div className="mx-auto max-w-7xl px-6">
