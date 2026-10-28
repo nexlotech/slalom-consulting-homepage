@@ -57,16 +57,16 @@ function Index() {
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <p className="text-xs font-bold tracking-[0.2em] text-brand">BUSINESS FIRST. TECHNOLOGY SECOND. OUTCOMES ALWAYS.</p>
-          <h1 className="mt-6 text-4xl md:text-6xl font-extrabold leading-[1.05] tracking-tight">
-            From Implementing Technology, Business Solutions & Processes to <span className="text-brand">Designing Better Businesses.</span>
+          <p className="text-xs font-bold tracking-[0.2em] text-brand-foreground">BUSINESS FIRST. TECHNOLOGY SECOND. OUTCOMES ALWAYS.</p>
+          <h1 className="mt-6 text-4xl md:text-6xl font-light leading-[1.08] tracking-tight">
+            From Implementing Technology, Business Solutions & Processes to <span className="font-serif italic text-brand-foreground">Designing Better Businesses.</span>
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-xl">Independent IT advisory and digital transformation solutions that help businesses make better technology decisions, improve operations and achieve measurable outcomes.</p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <span className="text-sm font-bold">Explore Services:</span>
-            <a href="#" className="rounded-full bg-brand-soft px-4 py-2 text-sm font-bold text-[oklch(0.45_0.12_330)] hover:ring-2 ring-brand">odoo</a>
-            <a href="#" className="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold flex items-center gap-2 hover:ring-2 ring-brand"><MsMark />Microsoft</a>
-            <a href="#" className="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold flex items-center gap-2 hover:ring-2 ring-brand"><Sparkles className="size-4 text-brand" />AI Platform</a>
+            <a href="#" className="rounded-full border border-foreground/70 px-5 py-2 text-sm font-bold hover:bg-foreground hover:text-background transition">odoo</a>
+            <a href="#" className="rounded-full border border-foreground/70 px-5 py-2 text-sm font-semibold flex items-center gap-2 hover:bg-foreground hover:text-background transition"><MsMark />Microsoft</a>
+            <a href="#" className="rounded-full border border-foreground/70 px-5 py-2 text-sm font-semibold flex items-center gap-2 hover:bg-foreground hover:text-background transition"><Sparkles className="size-4 text-brand" />AI Platform</a>
           </div>
         </div>
         <div className="relative">
@@ -80,11 +80,11 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-brand-soft py-12">
+      <section className="bg-wave py-12">
         <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-3 gap-6">
-          <div className="rounded-2xl bg-background border border-brand/15 p-6"><p className="text-2xl font-extrabold text-[oklch(0.45_0.12_330)]">odoo</p><p className="mt-2 text-sm text-muted-foreground">ERP & business applications</p></div>
-          <div className="rounded-2xl bg-background border border-brand/15 p-6"><p className="flex items-center gap-3 text-2xl font-bold"><MsMark />Microsoft</p><p className="mt-2 text-sm text-muted-foreground">ERP & Business Solutions</p></div>
-          <div className="rounded-2xl bg-background border border-brand/15 p-6"><p className="flex items-center gap-3 text-2xl font-bold"><Sparkles className="text-brand" />AI Platform</p><p className="mt-2 text-sm text-muted-foreground">Insights. Automation. Better Decisions.</p></div>
+          <div className="rounded-2xl bg-foreground/5 border border-foreground/15 p-6"><p className="text-2xl font-extrabold">odoo</p><p className="mt-2 text-sm text-muted-foreground">ERP & business applications</p></div>
+          <div className="rounded-2xl bg-foreground/5 border border-foreground/15 p-6"><p className="flex items-center gap-3 text-2xl font-bold"><MsMark />Microsoft</p><p className="mt-2 text-sm text-muted-foreground">ERP & Business Solutions</p></div>
+          <div className="rounded-2xl bg-foreground/5 border border-foreground/15 p-6"><p className="flex items-center gap-3 text-2xl font-bold"><Sparkles className="text-brand" />AI Platform</p><p className="mt-2 text-sm text-muted-foreground">Insights. Automation. Better Decisions.</p></div>
         </div>
       </section>
 
@@ -93,28 +93,28 @@ function Index() {
           { id: "advisory", t: "Advisory", s: "Technology & Business", d: "IT strategy, vCIO, ERP assessment and technology roadmaps.", I: Compass },
           { id: "digital-transformation", t: "Digital Transformation", s: "End-to-end change", d: "ERP, AI, Automation, Integration, Analytics, Branding and Media.", I: Network },
         ].map(({ id, t, s, d, I }) => (
-          <a key={t} id={id} href="#" className="group rounded-3xl border border-brand/20 p-8 md:p-10 hover:shadow-xl hover:border-brand transition">
-            <span className="grid place-items-center size-14 rounded-full bg-brand-soft text-brand"><I /></span>
-            <p className="mt-6 text-sm font-semibold text-brand">{s}</p>
-            <h2 className="mt-1 text-3xl font-extrabold">{t}</h2>
+          <a key={t} id={id} href="#" className="group rounded-3xl border border-foreground/15 bg-foreground/5 p-8 md:p-10 hover:border-brand hover:bg-foreground/10 transition">
+            <span className="grid place-items-center size-14 rounded-full bg-brand text-primary-foreground"><I /></span>
+            <p className="mt-6 text-sm font-semibold text-brand-foreground">{s}</p>
+            <h2 className="mt-1 text-3xl md:text-4xl font-light">{t}</h2>
             <p className="mt-3 text-muted-foreground">{d}</p>
             <ArrowRight className="mt-6 text-brand group-hover:translate-x-2 transition" />
           </a>
         ))}
       </section>
 
-      <section className="bg-brand-soft py-20">
+      <section className="bg-wave py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">Our <span className="text-brand">DRIC™</span> Approach</h2>
+          <h2 className="text-4xl md:text-6xl font-light tracking-tight">Our <span className="font-serif italic">DRIC™</span> Approach</h2>
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {steps.map(({ n, t, p, d, i: I }) => (
-              <div key={n} className="rounded-2xl bg-background border border-brand/15 p-6 shadow-sm">
+              <div key={n} className="rounded-2xl bg-foreground/5 border border-foreground/15 p-6 shadow-sm">
                 <div className="flex items-center justify-between">
                   <span className="grid place-items-center size-12 rounded-full bg-brand text-primary-foreground"><I className="size-5" /></span>
-                  <span className="text-3xl font-extrabold text-brand/25">{n}</span>
+                  <span className="text-3xl font-extrabold text-foreground/20">{n}</span>
                 </div>
                 <h3 className="mt-5 text-xl font-extrabold">{t}</h3>
-                <p className="text-sm font-semibold text-brand">{p}</p>
+                <p className="text-sm font-semibold text-brand-foreground">{p}</p>
                 <p className="mt-3 text-sm text-muted-foreground">{d}</p>
               </div>
             ))}
@@ -126,10 +126,10 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6 py-16 flex flex-col md:flex-row md:items-center gap-8">
           <span className="grid place-items-center size-16 rounded-full bg-brand shrink-0"><Headset className="size-8" /></span>
           <div className="flex-1">
-            <h2 className="text-3xl md:text-4xl font-extrabold">Let's start with your business.</h2>
+            <h2 className="text-3xl md:text-5xl font-light">Let's start with your <span className="font-serif italic">business.</span></h2>
             <p className="mt-2 opacity-75">Meet with the virtual guide and discover the right next step for your organization.</p>
           </div>
-          <a href="#" className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-4 font-bold hover:brightness-110 focus-visible:ring-4 ring-brand/40 transition">Meet your virtual guide <ArrowRight className="size-4" /></a>
+          <a href="#" className="inline-flex items-center gap-2 rounded-full bg-brand text-primary-foreground px-7 py-3 font-bold hover:brightness-110 focus-visible:ring-4 ring-brand/40 transition">Meet your virtual guide <ArrowRight className="size-4" /></a>
         </div>
         <p className="border-t border-navy-foreground/10 py-6 text-center text-xs opacity-60">© 2026 ERPFunnel™. All rights reserved.</p>
       </footer>
