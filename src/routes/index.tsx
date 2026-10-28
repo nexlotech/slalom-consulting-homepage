@@ -11,6 +11,7 @@ import blog6 from "@/assets/blog-6.jpg";
 import serviceAdvisory from "@/assets/service-advisory.jpg";
 import serviceTransformation from "@/assets/service-transformation.jpg";
 import serviceAi from "@/assets/service-ai.jpg";
+import logoAsset from "@/assets/erpfunnel-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -151,7 +152,7 @@ function Index() {
     <div className="min-h-screen bg-background font-sans">
       <header className="bg-navy text-navy-foreground sticky top-0 z-50">
         <div className="mx-auto max-w-7xl px-6 h-18 py-4 flex items-center justify-between gap-6">
-          <a href="#" className="text-2xl font-extrabold tracking-tight">ERP<span className="text-brand">Funnel</span>™</a>
+          <a href="#" className="shrink-0"><img src={logoAsset.url} alt="ERPFunnel™" className="h-10 w-auto" /></a>
           <nav className="hidden lg:flex gap-8 text-sm font-medium">
             {nav.map((n) => <a key={n} href={`#${n.toLowerCase().replace(/ /g, "-")}`} className="opacity-80 hover:opacity-100 hover:text-brand transition">{n}</a>)}
           </nav>
@@ -266,7 +267,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6 pt-16 pb-10">
           <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
             <div>
-              <a href="#" className="text-3xl font-extrabold tracking-tight">ERP<span className="text-brand">Funnel</span>™</a>
+              <a href="#" className="inline-block"><img src={logoAsset.url} alt="ERPFunnel™" className="h-12 w-auto" /></a>
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-navy-foreground/70">Independent IT advisory and digital transformation. Business first. Technology second. Outcomes always.</p>
               <div className="mt-6 flex gap-3">
                 {[
