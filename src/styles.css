@@ -71,14 +71,12 @@
 :root {
   --radius: 0.75rem;
   --font-sans: "Manrope", system-ui, sans-serif;
-  --navy: oklch(0.08 0.01 265);
+  --navy: oklch(0.159 0.06 261);
   --navy-foreground: oklch(0.98 0 0);
   --brand: oklch(0.58 0.22 262);
   --brand-foreground: oklch(0.72 0.15 255);
   --brand-soft: oklch(0.15 0.05 264);
-  --gradient-navy: radial-gradient(ellipse at 85% 0%, oklch(0.3 0.14 262 / 0.7), transparent 60%), oklch(0.12 0.045 265);
-  --gradient-wave: radial-gradient(ellipse 80% 60% at 70% 30%, oklch(0.28 0.13 262 / 0.55), transparent 70%), oklch(0.12 0.045 265);
-  --background: oklch(0.12 0.045 265);
+  --background: oklch(0.159 0.06 261);
   --foreground: oklch(0.98 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
@@ -156,12 +154,4 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
-}
-
-@utility bg-navy-gradient {
-  background: var(--gradient-navy);
-}
-
-@utility bg-wave {
-  background: var(--gradient-wave);
 }

@@ -197,7 +197,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-wave py-12">
+      <section className="bg-navy py-12">
         <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-3 gap-6">
           <div className="rounded-2xl bg-foreground/5 border border-foreground/15 p-6"><p className="text-2xl font-extrabold">odoo</p><p className="mt-2 text-sm text-muted-foreground">ERP & business applications</p></div>
           <div className="rounded-2xl bg-foreground/5 border border-foreground/15 p-6"><p className="flex items-center gap-3 text-2xl font-bold"><MsMark />Microsoft</p><p className="mt-2 text-sm text-muted-foreground">ERP & Business Solutions</p></div>
@@ -233,7 +233,7 @@ function Index() {
 
       <BlogSection />
 
-      <section className="bg-wave py-20">
+      <section className="bg-navy py-20">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="text-4xl md:text-6xl font-light tracking-tight">Our <span className="font-serif italic">DRIC™</span> Approach</h2>
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -252,7 +252,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="contact" className="bg-navy-gradient text-navy-foreground">
+      <section id="contact" className="bg-navy text-navy-foreground">
         <div className="mx-auto max-w-7xl px-6 py-16 flex flex-col md:flex-row md:items-center gap-8">
           <span className="grid place-items-center size-16 rounded-full bg-brand shrink-0"><Headset className="size-8" /></span>
           <div className="flex-1">
