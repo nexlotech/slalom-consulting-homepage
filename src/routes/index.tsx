@@ -43,6 +43,14 @@ function MsMark() {
   );
 }
 
+function OdooMark({ className, style }: { className?: string; style?: React.CSSProperties }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} style={style} aria-hidden>
+      <path d="M21.1002 15.7957c-1.6015 0-2.8997-1.2983-2.8997-2.8998s1.2983-2.8997 2.8997-2.8997c1.6015 0 2.8998 1.2982 2.8998 2.8997 0 1.5999-1.2979 2.8998-2.8998 2.8998zm0-1.2c.9388.0006 1.7003-.7601 1.7008-1.6989.0004-.9388-.7602-1.7003-1.699-1.7007h-.0018c-.9388.0004-1.6994.7619-1.699 1.7007.0005.9381.761 1.6985 1.699 1.699zm-6.0655 1.2c-1.6014 0-2.8997-1.2983-2.8997-2.8998s1.2983-2.8997 2.8997-2.8997c1.6015 0 2.8998 1.2982 2.8998 2.8997 0 1.5999-1.2999 2.8998-2.8998 2.8998zm0-1.2c.9389.0006 1.7003-.7601 1.7008-1.6989.0005-.9388-.7602-1.7003-1.699-1.7007h-.0018c-.9388.0004-1.6994.7619-1.699 1.7007.0005.9381.761 1.6985 1.699 1.699zM11.865 12.858c0 1.6199-1.2979 2.9378-2.8977 2.9378s-2.8998-1.314-2.8998-2.9358 1.1799-2.8597 2.8998-2.8597c.6359 0 1.2239.134 1.6998.484v-1.68a.6.6 0 0 1 1.2 0v4.0537h-.002zm-2.8977 1.7399c.9388.0005 1.7002-.7602 1.7007-1.699.0005-.9388-.7602-1.7003-1.699-1.7007h-.0017c-.9389.0004-1.6995.7619-1.699 1.7007.0004.9381.7608 1.6985 1.699 1.699zm-6.0675 1.1979C1.2983 15.7957 0 14.4974 0 12.8959s1.2983-2.8997 2.8998-2.8997 2.8997 1.2982 2.8997 2.8997c0 1.5999-1.2999 2.8998-2.8997 2.8998zm0-1.2c.9388.0006 1.7002-.7601 1.7007-1.699.0005-.9387-.7602-1.7002-1.699-1.7006h-.0017c-.9388.0004-1.6995.7619-1.699 1.7007.0004.9381.7608 1.6985 1.699 1.699z" />
+    </svg>
+  );
+}
+
 const pillars = [
   { t: "Advisory", I: Compass },
   { t: "Digital Transformation", I: Network },
@@ -186,13 +194,13 @@ function Index() {
         <div className="relative mx-auto w-full max-w-7xl px-6 py-24 grid lg:grid-cols-[1.15fr_1fr] items-center gap-12">
           <div>
             <p className="text-xs font-bold tracking-[0.2em] text-brand-foreground">BUSINESS FIRST. TECHNOLOGY SECOND. OUTCOMES ALWAYS.</p>
-            <h1 className="mt-6 max-w-3xl text-4xl md:text-6xl font-light leading-[1.08] tracking-tight text-navy-foreground">
+            <h1 className="mt-6 max-w-3xl text-3xl md:text-5xl font-light leading-[1.12] tracking-tight text-navy-foreground">
               From Implementing Technology, Business Solutions &amp; Processes to <span className="font-serif italic text-brand-foreground">Designing Better Businesses.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-navy-foreground/75">Independent IT advisory and digital transformation solutions that help businesses make better technology decisions, improve operations and achieve measurable outcomes.</p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <span className="text-sm font-bold text-navy-foreground">Explore Services:</span>
-              <a href="#" className="rounded-full border border-navy-foreground/60 bg-navy/40 px-5 py-2 text-sm font-bold text-navy-foreground backdrop-blur hover:bg-navy-foreground hover:text-navy transition">odoo</a>
+              <a href="#" className="rounded-full border border-navy-foreground/60 bg-navy/40 px-5 py-2 text-sm font-bold text-navy-foreground backdrop-blur hover:bg-navy-foreground hover:text-navy transition"><OdooMark className="w-12 h-auto text-navy-foreground" /></a>
               <a href="#" className="rounded-full border border-navy-foreground/60 bg-navy/40 px-5 py-2 text-sm font-semibold text-navy-foreground backdrop-blur flex items-center gap-2 hover:bg-navy-foreground hover:text-navy transition"><MsMark />Microsoft</a>
               <a href="#" className="rounded-full border border-navy-foreground/60 bg-navy/40 px-5 py-2 text-sm font-semibold text-navy-foreground backdrop-blur flex items-center gap-2 hover:bg-navy-foreground hover:text-navy transition"><Sparkles className="size-4 text-brand" />AI Platform</a>
             </div>
@@ -206,7 +214,7 @@ function Index() {
 
       <section className="bg-navy py-12">
         <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-3 gap-6">
-          <div className="rounded-2xl bg-foreground/5 border border-foreground/15 p-6"><p className="text-2xl font-extrabold">odoo</p><p className="mt-2 text-sm text-muted-foreground">ERP & business applications</p></div>
+          <div className="rounded-2xl bg-foreground/5 border border-foreground/15 p-6"><p className="flex items-center"><OdooMark className="w-24 h-auto text-[#9b7186]" /></p><p className="mt-2 text-sm text-muted-foreground">ERP & business applications</p></div>
           <div className="rounded-2xl bg-foreground/5 border border-foreground/15 p-6"><p className="flex items-center gap-3 text-2xl font-bold"><MsMark />Microsoft</p><p className="mt-2 text-sm text-muted-foreground">ERP & Business Solutions</p></div>
           <div className="rounded-2xl bg-foreground/5 border border-foreground/15 p-6"><p className="flex items-center gap-3 text-2xl font-bold"><Sparkles className="text-brand" />AI Platform</p><p className="mt-2 text-sm text-muted-foreground">Insights. Automation. Better Decisions.</p></div>
         </div>
