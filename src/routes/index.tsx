@@ -12,6 +12,7 @@ import serviceAdvisory from "@/assets/service-advisory.jpg";
 import serviceTransformation from "@/assets/service-transformation.jpg";
 import serviceAi from "@/assets/service-ai.jpg";
 import logoAsset from "@/assets/erpfunnel-logo.png.asset.json";
+import heroPortrait from "@/assets/hero-portrait.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -182,17 +183,23 @@ function Index() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/70 to-navy/30" />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-navy to-transparent" />
-        <div className="relative mx-auto w-full max-w-7xl px-6 py-24">
-          <p className="text-xs font-bold tracking-[0.2em] text-brand-foreground">BUSINESS FIRST. TECHNOLOGY SECOND. OUTCOMES ALWAYS.</p>
-          <h1 className="mt-6 max-w-3xl text-4xl md:text-6xl font-light leading-[1.08] tracking-tight text-navy-foreground">
-            From Implementing Technology, Business Solutions &amp; Processes to <span className="font-serif italic text-brand-foreground">Designing Better Businesses.</span>
-          </h1>
-          <p className="mt-6 max-w-xl text-lg text-navy-foreground/75">Independent IT advisory and digital transformation solutions that help businesses make better technology decisions, improve operations and achieve measurable outcomes.</p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <span className="text-sm font-bold text-navy-foreground">Explore Services:</span>
-            <a href="#" className="rounded-full border border-navy-foreground/60 bg-navy/40 px-5 py-2 text-sm font-bold text-navy-foreground backdrop-blur hover:bg-navy-foreground hover:text-navy transition">odoo</a>
-            <a href="#" className="rounded-full border border-navy-foreground/60 bg-navy/40 px-5 py-2 text-sm font-semibold text-navy-foreground backdrop-blur flex items-center gap-2 hover:bg-navy-foreground hover:text-navy transition"><MsMark />Microsoft</a>
-            <a href="#" className="rounded-full border border-navy-foreground/60 bg-navy/40 px-5 py-2 text-sm font-semibold text-navy-foreground backdrop-blur flex items-center gap-2 hover:bg-navy-foreground hover:text-navy transition"><Sparkles className="size-4 text-brand" />AI Platform</a>
+        <div className="relative mx-auto w-full max-w-7xl px-6 py-24 grid lg:grid-cols-[1.15fr_1fr] items-center gap-12">
+          <div>
+            <p className="text-xs font-bold tracking-[0.2em] text-brand-foreground">BUSINESS FIRST. TECHNOLOGY SECOND. OUTCOMES ALWAYS.</p>
+            <h1 className="mt-6 max-w-3xl text-4xl md:text-6xl font-light leading-[1.08] tracking-tight text-navy-foreground">
+              From Implementing Technology, Business Solutions &amp; Processes to <span className="font-serif italic text-brand-foreground">Designing Better Businesses.</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-lg text-navy-foreground/75">Independent IT advisory and digital transformation solutions that help businesses make better technology decisions, improve operations and achieve measurable outcomes.</p>
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <span className="text-sm font-bold text-navy-foreground">Explore Services:</span>
+              <a href="#" className="rounded-full border border-navy-foreground/60 bg-navy/40 px-5 py-2 text-sm font-bold text-navy-foreground backdrop-blur hover:bg-navy-foreground hover:text-navy transition">odoo</a>
+              <a href="#" className="rounded-full border border-navy-foreground/60 bg-navy/40 px-5 py-2 text-sm font-semibold text-navy-foreground backdrop-blur flex items-center gap-2 hover:bg-navy-foreground hover:text-navy transition"><MsMark />Microsoft</a>
+              <a href="#" className="rounded-full border border-navy-foreground/60 bg-navy/40 px-5 py-2 text-sm font-semibold text-navy-foreground backdrop-blur flex items-center gap-2 hover:bg-navy-foreground hover:text-navy transition"><Sparkles className="size-4 text-brand" />AI Platform</a>
+            </div>
+          </div>
+          <div className="relative hidden md:block justify-self-end">
+            <div className="absolute -inset-3 rounded-[2rem] border border-navy-foreground/25" aria-hidden />
+            <img src={heroPortrait.url} alt="ERPFunnel consultant" width={936} height={1168} className="w-full max-w-md rounded-[2rem] object-cover aspect-[4/5] ring-1 ring-navy-foreground/30 shadow-2xl shadow-navy/60" />
           </div>
         </div>
       </section>
