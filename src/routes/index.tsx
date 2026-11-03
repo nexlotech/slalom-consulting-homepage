@@ -13,6 +13,7 @@ import serviceTransformation from "@/assets/service-transformation.jpg";
 import serviceAi from "@/assets/service-ai.jpg";
 import logoAsset from "@/assets/erpfunnel-logo.png.asset.json";
 import heroPortrait from "@/assets/hero-portrait.jpg.asset.json";
+import odooLogo from "@/assets/odoo-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -40,14 +41,6 @@ function MsMark() {
       <span className="bg-[oklch(0.63_0.22_30)]" /><span className="bg-[oklch(0.72_0.19_140)]" />
       <span className="bg-[oklch(0.65_0.18_240)]" /><span className="bg-[oklch(0.82_0.17_85)]" />
     </span>
-  );
-}
-
-function OdooMark({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
-      <path d="M21.1002 15.7957c-1.6015 0-2.8997-1.2983-2.8997-2.8998s1.2983-2.8997 2.8997-2.8997c1.6015 0 2.8998 1.2982 2.8998 2.8997 0 1.5999-1.2979 2.8998-2.8998 2.8998zm0-1.2c.9388.0006 1.7003-.7601 1.7008-1.6989.0004-.9388-.7602-1.7003-1.699-1.7007h-.0018c-.9388.0004-1.6994.7619-1.699 1.7007.0005.9381.761 1.6985 1.699 1.699zm-6.0655 1.2c-1.6014 0-2.8997-1.2983-2.8997-2.8998s1.2983-2.8997 2.8997-2.8997c1.6015 0 2.8998 1.2982 2.8998 2.8997 0 1.5999-1.2999 2.8998-2.8998 2.8998zm0-1.2c.9389.0006 1.7003-.7601 1.7008-1.6989.0005-.9388-.7602-1.7003-1.699-1.7007h-.0018c-.9388.0004-1.6994.7619-1.699 1.7007.0005.9381.761 1.6985 1.699 1.699zM11.865 12.858c0 1.6199-1.2979 2.9378-2.8977 2.9378s-2.8998-1.314-2.8998-2.9358 1.1799-2.8597 2.8998-2.8597c.6359 0 1.2239.134 1.6998.484v-1.68a.6.6 0 0 1 1.2 0v4.0537h-.002zm-2.8977 1.7399c.9388.0005 1.7002-.7602 1.7007-1.699.0005-.9388-.7602-1.7003-1.699-1.7007h-.0017c-.9389.0004-1.6995.7619-1.699 1.7007.0004.9381.7608 1.6985 1.699 1.699zm-6.0675 1.1979C1.2983 15.7957 0 14.4974 0 12.8959s1.2983-2.8997 2.8998-2.8997 2.8997 1.2982 2.8997 2.8997c0 1.5999-1.2999 2.8998-2.8997 2.8998zm0-1.2c.9388.0006 1.7002-.7601 1.7007-1.699.0005-.9387-.7602-1.7002-1.699-1.7006h-.0017c-.9388.0004-1.6995.7619-1.699 1.7007.0004.9381.7608 1.6985 1.699 1.699z" />
-    </svg>
   );
 }
 
@@ -182,7 +175,7 @@ function Index() {
             <p className="mt-6 max-w-xl text-lg text-navy-foreground/75">Independent IT advisory and digital transformation solutions that help businesses make better technology decisions, improve operations and achieve measurable outcomes.</p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <span className="text-sm font-bold text-navy-foreground">Explore Services:</span>
-              <a href="#" className="rounded-full border border-navy-foreground/60 bg-navy/40 px-5 py-2 text-sm font-bold text-navy-foreground backdrop-blur hover:bg-navy-foreground hover:text-navy transition"><OdooMark className="w-12 h-auto text-navy-foreground" /></a>
+              <a href="#" className="rounded-full border border-navy-foreground/60 bg-navy/40 px-5 py-2 text-sm font-bold text-navy-foreground backdrop-blur hover:bg-navy-foreground hover:text-navy transition"><img src={odooLogo.url} alt="odoo" className="h-4 w-auto" /></a>
               <a href="#" className="rounded-full border border-navy-foreground/60 bg-navy/40 px-5 py-2 text-sm font-semibold text-navy-foreground backdrop-blur flex items-center gap-2 hover:bg-navy-foreground hover:text-navy transition"><MsMark />Microsoft</a>
               <a href="#" className="rounded-full border border-navy-foreground/60 bg-navy/40 px-5 py-2 text-sm font-semibold text-navy-foreground backdrop-blur flex items-center gap-2 hover:bg-navy-foreground hover:text-navy transition"><Sparkles className="size-4 text-brand" />AI Platform</a>
             </div>
